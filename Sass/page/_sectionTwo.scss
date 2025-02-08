@@ -6,9 +6,11 @@
   background-color: var.$color-primery;
   position: relative;
   padding-top: 10rem;
+  padding-bottom: 10rem;
   overflow-x: hidden;
   @include mix.respond(smallPhone) {
     padding-top: 0rem;
+    padding-bottom: 0rem;
   }
 }
 

@@ -438,11 +438,13 @@ a {
   background-color: #07374f;
   position: relative;
   padding-top: 10rem;
+  padding-bottom: 10rem;
   overflow-x: hidden;
 }
 @media only screen and (max-width: 575.98px) {
   .sectionTwo {
     padding-top: 0rem;
+    padding-bottom: 0rem;
   }
 }
 
