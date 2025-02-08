@@ -20,7 +20,6 @@ a {
   max-width: 2000px;
   margin: 0 auto;
   background-color: #07374f;
-  overflow-x: hidden !important;
 }
 
 .lets-talk-button {
