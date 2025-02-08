@@ -48,12 +48,25 @@
       width: 15rem;
       right: -12rem;
     }
+    @include mix.respond(phone) {
+      width: 23rem;
+      right: -14rem;
+    }
     @include mix.respond(tablets) {
       width: 30rem;
       right: -13rem;
     }
+
     @include mix.respond(bigTablets) {
       width: 35rem;
+      right: -13rem;
+    }
+    @include mix.respond(desktop) {
+      width: 40rem;
+      right: -13rem;
+    }
+    @include mix.respond(bigDesktop) {
+      width: 45rem;
       right: -13rem;
     }
   }
@@ -89,12 +102,25 @@
       width: 15rem;
       left: -12rem;
     }
+    @include mix.respond(phone) {
+      width: 23rem;
+      left: -15rem;
+    }
     @include mix.respond(tablets) {
       width: 30rem;
       left: -15rem;
     }
+
     @include mix.respond(bigTablets) {
       width: 35rem;
+      left: -15rem;
+    }
+    @include mix.respond(desktop) {
+      width: 40rem;
+      left: -15rem;
+    }
+    @include mix.respond(bigDesktop) {
+      width: 45rem;
       left: -15rem;
     }
   }
