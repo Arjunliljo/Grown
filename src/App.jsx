@@ -16,7 +16,7 @@ function App() {
       </header>
       <main className="main">
         <SectionOne />
-        {/* <SectionTwo /> */}
+        <SectionTwo />
         <SectionThree />
         <SectionFour />
         <SectionFive />
