@@ -1,0 +1,33 @@
+@use "./../abstract/variables" as var;
+@use "./../base/responsive" as mix;
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.home-sec-btn {
+  width: 10rem;
+  height: 3rem;
+  background-color: transparent;
+  border: 1px solid var.$color-primery-light;
+  border-radius: 1rem;
+  color: var.$color-primery;
+
+  @include mix.respond(smallPhone) {
+    width: 7rem;
+    height: 2.5rem;
+  }
+}
+.home-prime-btn {
+  width: 10rem;
+  height: 3rem;
+  background-color: var.$color-primery-light;
+  border-radius: 1rem;
+  color: var.$color-primery;
+
+  @include mix.respond(smallPhone) {
+    width: 7rem;
+    height: 2.5rem;
+  }
+}

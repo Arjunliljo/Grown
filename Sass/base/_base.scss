@@ -1,0 +1,43 @@
+@use "../abstract/variables" as var;
+@use "../base/responsive" as mix;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.5s ease-in-out;
+}
+body {
+  font-family: "Inter", serif;
+  overflow-x: hidden !important;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.container {
+  width: 100%;
+  max-width: 2000px;
+  margin: 0 auto;
+  background-color: var.$color-primery;
+}
+.lets-talk-button {
+  background-color: var.$color-primery;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  background-color: white;
+  width: 10rem;
+  margin-left: 4rem;
+  margin-top: 2rem;
+
+  @include mix.respond(smallPhone) {
+    margin-left: 0rem;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 0.9rem;
+    width: 8rem;
+    font-size: 0.8rem;
+  }
+}

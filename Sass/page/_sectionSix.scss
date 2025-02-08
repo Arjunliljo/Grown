@@ -1,0 +1,108 @@
+@use "../abstract/variables" as var;
+@use "./../base/responsive" as mix;
+
+.sectionSix {
+  height: 70vh;
+  background-color: rgb(255, 255, 255);
+  padding: 5rem 0;
+  @include mix.respond(bigDesktop) {
+  }
+  @include mix.respond(desktop) {
+  }
+  @include mix.respond(bigTablets) {
+    height: fit-content;
+    padding: 3rem 0;
+  }
+  @include mix.respond(tablets) {
+    height: fit-content;
+    padding: 3rem 0;
+  }
+  @include mix.respond(phone) {
+    height: fit-content;
+    padding: 0;
+  }
+
+  @include mix.respond(smallPhone) {
+    height: fit-content;
+    padding: 0;
+  }
+
+  & h2 {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 3rem;
+
+    @include mix.respond(smallPhone) {
+      font-size: 2rem;
+      padding: 1rem 2rem;
+    }
+  }
+
+  &-grid {
+    padding: 5rem;
+    width: 100%;
+
+    @include mix.respond(bigDesktop) {
+    }
+    @include mix.respond(bigTablets) {
+      padding: 2rem 5rem;
+      height: fit-content;
+    }
+    @include mix.respond(tablets) {
+      padding: 2rem 5rem;
+      height: fit-content;
+    }
+    @include mix.respond(phone) {
+      padding: 2rem 5rem;
+      height: fit-content;
+    }
+
+    @include mix.respond(desktop) {
+      padding: 2rem;
+      height: fit-content;
+    }
+
+    @include mix.respond(smallPhone) {
+      padding: 0.5rem 2rem;
+      height: fit-content;
+    }
+
+    &-main {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.5rem;
+      &:hover .sectionSix-grid-item:not(:hover) {
+        opacity: 0.4;
+        transition: opacity 0.3s ease;
+      }
+
+      @include mix.respond(tablets) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @include mix.respond(bigTablets) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    &-item {
+      height: 10rem;
+      background-color: var.$color-primery;
+      transition: opacity 0.3s ease;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .sectionSix-grid-main {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, auto);
+    }
+
+    .sectionSix-grid-item {
+      display: none;
+    }
+
+    .sectionSix-grid-item:nth-child(-n + 8) {
+      display: block;
+    }
+  }
+}

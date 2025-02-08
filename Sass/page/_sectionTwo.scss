@@ -1,0 +1,82 @@
+@use "../abstract/variables" as var;
+@use "../base/responsive" as mix;
+
+.sectionTwo {
+  height: fit-content;
+  background-color: var.$color-primery;
+  position: relative;
+  padding-top: 10rem;
+
+  @include mix.respond(smallPhone) {
+    padding-top: 0rem;
+  }
+}
+
+.hand-group {
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0rem;
+  height: fit-content;
+  padding: 10rem 0;
+}
+
+.right-hand {
+  background-color: transparent;
+  width: 50%;
+  height: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  transition: transform 0.5s ease-out;
+
+  @include mix.respond(smallPhone) {
+    height: 15rem;
+  }
+
+  & img {
+    width: 60rem;
+    position: absolute;
+    right: -15rem;
+
+    @include mix.respond(smallPhone) {
+      width: 15rem;
+      right: -12rem;
+    }
+  }
+}
+
+.left-hand {
+  background-color: transparent;
+  width: 50%;
+  height: 30rem;
+  display: flex;
+  left: 0;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+  transition: transform 1s ease-out;
+
+  @include mix.respond(smallPhone) {
+    height: 15rem;
+  }
+
+  @include mix.respond(smallPhone) {
+    margin-top: 5rem;
+  }
+
+  & img {
+    width: 60rem;
+    position: absolute;
+    z-index: 1;
+    left: -15rem;
+
+    @include mix.respond(smallPhone) {
+      width: 15rem;
+      left: -12rem;
+    }
+  }
+}

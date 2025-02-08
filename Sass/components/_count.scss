@@ -1,0 +1,76 @@
+@use "../base/responsive" as mix;
+.gridsection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 4rem;
+  column-gap: 10rem;
+
+  @include mix.respond(bigDesktop) {
+    margin-top: 2rem;
+    column-gap: 5rem;
+  }
+
+  @include mix.respond(desktop) {
+    margin-top: 2rem;
+    column-gap: 5rem;
+  }
+
+  @include mix.respond(bigTablets) {
+    margin-top: 0rem;
+    column-gap: 4rem;
+  }
+  @include mix.respond(tablets) {
+    margin-top: 0rem;
+    column-gap: 3rem;
+  }
+
+  @include mix.respond(phone) {
+    margin-top: 0rem;
+  }
+
+  @include mix.respond(smallPhone) {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    column-gap: 2rem;
+  }
+}
+
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ten {
+  font-weight: 500;
+  line-height: 1;
+  font-size: 4.5rem;
+  color: white;
+
+  @include mix.respond(tablets) {
+    font-size: 3rem;
+  }
+  @include mix.respond(phone) {
+    font-size: 2.5rem;
+  }
+  @include mix.respond(smallPhone) {
+    font-size: 2.5rem;
+  }
+}
+
+.numberhead {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 9rem;
+  font-weight: 100;
+  @include mix.respond(smallPhone) {
+    font-size: 0.8rem;
+    width: 7rem;
+  }
+}

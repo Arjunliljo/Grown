@@ -1,0 +1,38 @@
+@use "./../abstract/variables" as var;
+@use "./../base/responsive" as mix;
+.grid-section {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  grid-auto-rows: 10px;
+  overflow: hidden;
+  // width: 100vw;
+
+  @include mix.respond(smallPhone) {
+    grid-template-columns: repeat(2, 1fr);
+    // padding: 1rem;
+  }
+
+  @include mix.respond(phone) {
+    grid-template-columns: repeat(2, 1fr);
+    // padding: 1rem;
+  }
+  @include mix.respond(tablets) {
+    grid-template-columns: repeat(4, 1fr);
+    // padding: 1rem;
+  }
+  @include mix.respond(bigTablets) {
+    grid-template-columns: repeat(5, 1fr);
+    // padding: 1rem;
+  }
+}
+
+.card {
+  width: 100%;
+  background-color: var.$color-primery-light;
+  border-radius: 2rem;
+  grid-row: span 20;
+  height: auto;
+  overflow: hidden;
+  transition: transform 1s ease-in-out;
+}

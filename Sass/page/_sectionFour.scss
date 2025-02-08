@@ -1,0 +1,134 @@
+@use "../abstract/variables" as var;
+@use "../base/responsive" as mix;
+
+.sectionFour {
+  height: 100vh;
+  width: 100%;
+  background-color: white;
+  margin-top: -10rem;
+
+  @include mix.respond(smallPhone) {
+    margin-top: 0rem;
+    height: fit-content;
+    padding-bottom: 5rem;
+  }
+  @include mix.respond(phone) {
+    height: fit-content;
+    padding-bottom: 5rem;
+  }
+  @include mix.respond(tablets) {
+    height: fit-content;
+    padding-bottom: 5rem;
+  }
+
+  @include mix.respond(bigTablets) {
+    height: fit-content;
+    padding-bottom: 5rem;
+  }
+  @include mix.respond(desktop) {
+    height: fit-content;
+    padding-bottom: 5rem;
+  }
+
+  &-heading {
+    color: var.$color-primery;
+    font-size: 4rem;
+    padding-top: 10rem;
+    margin-top: 10rem;
+    text-align: center;
+    @include mix.respond(bigDesktop) {
+    }
+    @include mix.respond(desktop) {
+      padding-top: 5rem;
+    }
+    @include mix.respond(bigTablets) {
+      padding-top: 4rem;
+    }
+    @include mix.respond(tablets) {
+      padding-top: 4rem;
+    }
+    @include mix.respond(phone) {
+      padding-top: 4rem;
+    }
+
+    @include mix.respond(smallPhone) {
+      margin-top: 0rem;
+      padding-top: 5rem;
+    }
+
+    & h2 {
+      font-weight: 400;
+      @include mix.respond(bigDesktop) {
+      }
+      @include mix.respond(desktop) {
+        font-size: 5.5rem;
+      }
+      @include mix.respond(bigTablets) {
+        font-size: 5rem;
+      }
+      @include mix.respond(tablets) {
+        font-size: 5rem;
+      }
+      @include mix.respond(phone) {
+        font-size: 4rem;
+      }
+
+      @include mix.respond(smallPhone) {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  &-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 5rem;
+    flex-wrap: wrap;
+
+    @include mix.respond(smallPhone) {
+      flex-direction: column;
+    }
+
+    @include mix.respond(phone) {
+      flex-direction: column;
+    }
+
+    @include mix.respond(tablets) {
+      flex-direction: row;
+      justify-content: center;
+      gap: 2rem;
+    }
+    @include mix.respond(bigTablets) {
+      flex-direction: row;
+      justify-content: center;
+      gap: 3rem;
+    }
+    @include mix.respond(desktop) {
+      flex-direction: row;
+      justify-content: center;
+      gap: 3rem;
+    }
+
+    &-content {
+      height: 20rem;
+      cursor: pointer;
+      padding: 1.5rem;
+      width: 20rem;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      align-items: end;
+      gap: 1rem;
+      font-size: 1.8rem;
+
+      & p {
+        font-size: 1rem;
+        color: var.$color-primery;
+      }
+    }
+  }
+}

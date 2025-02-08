@@ -1,0 +1,228 @@
+@use "../abstract/variables" as var;
+@use "../base/responsive" as mix;
+.header {
+  background-color: var.$color-primery;
+  width: 100%;
+  height: fit-content;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  color: var.$color-primery-light;
+
+  // @include mix.respond(smallPhone) {
+  //   display: none;
+  // }
+
+  &__logo {
+    width: 10rem;
+
+    & img {
+      width: 150px;
+    }
+  }
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 3rem;
+    border: 1px solid var.$color-primery-light;
+    border-radius: 1rem;
+    color: var.$color-primery;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+  &__button-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 3rem;
+    border: 1px solid var.$color-primery-light;
+    border-radius: 1rem;
+    color: var.$color-primery;
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  padding: 0 1rem;
+  color: var.$color-primery-light;
+  list-style: none;
+  flex: 1;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+
+  & li {
+    cursor: pointer;
+  }
+}
+.navigation {
+  display: none;
+  z-index: 100000000;
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+}
+.navigation__checkbox {
+  position: absolute;
+  top: 1rem;
+  right: 1.55rem;
+  height: 0rem;
+  width: 0rem;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 30000000000000;
+}
+.navigation__btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background-color: transparent;
+  border-radius: 50%;
+  text-align: center;
+  z-index: 1000000000000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // cursor: pointer;
+}
+.navigation__background {
+  background-image: white;
+  height: 6rem;
+  width: 6rem;
+  border-radius: 0;
+  position: fixed;
+  top: 6.5rem;
+  left: 6.5rem;
+  z-index: 5000;
+  transition: transform 0.5s;
+}
+.navigation__nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 500000000;
+  height: 100vh;
+  width: 0;
+  opacity: 0;
+  transition: all 0.2s;
+  visibility: hidden;
+  border-radius: 0;
+  background-color: #07374f;
+  overflow: hidden;
+}
+.navigation__list {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  font-weight: 500;
+  text-align: center;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.navigation__item {
+  margin: 0.5rem;
+  width: 100%;
+  text-align: center;
+}
+@media (max-width: 900px) {
+  .navigation__item {
+    margin: 0;
+  }
+}
+.navigation__link {
+  display: inline-block;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+  padding: 1rem;
+}
+
+@media (max-width: 900px) {
+  .navigation__link {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+}
+@media (max-width: 900px) {
+  .navigation__link {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+
+.navigation__checkbox:checked ~ .navigation__nav {
+  visibility: visible;
+  width: 100%;
+  opacity: 1;
+}
+.navigation__checkbox:checked ~ .navigation__background {
+  transform: scale(60);
+  border-radius: 0;
+}
+.navigation__checkbox:checked ~ .navigation__btn .navigation__icon::after {
+  transform: rotate(45deg);
+  top: 0rem;
+}
+.navigation__checkbox:checked ~ .navigation__btn .navigation__icon::before {
+  transform: rotate(-45deg);
+  top: 0rem;
+}
+.navigation__checkbox:checked ~ .navigation__btn .navigation__icon {
+  background-color: transparent;
+}
+.navigation__icon {
+  position: relative;
+}
+.navigation__icon,
+.navigation__icon::after,
+.navigation__icon::before {
+  display: inline-block;
+  background-color: #ffffff;
+  width: 1.5rem;
+  height: 2px;
+  transition: all 0.3s;
+}
+.navigation__icon::after,
+.navigation__icon::before {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+.navigation__icon::after {
+  top: 0.4rem;
+}
+.navigation__icon::before {
+  top: -0.4rem;
+}
+.navigation__btn:hover .navigation__icon::after {
+  transform: translateY(0.1rem);
+}
+.navigation__btn:hover .navigation__icon::before {
+  transform: translateY(-0.1rem);
+}
+
+.nav-item:last-child {
+  margin-left: auto;
+}
+.no-scroll {
+  overflow: hidden;
+}

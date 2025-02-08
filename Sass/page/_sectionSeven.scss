@@ -1,0 +1,121 @@
+@use "../abstract/variables" as var;
+@use "../base/responsive" as mix;
+
+.sectionSeven {
+  background-color: white;
+  padding: 0 5rem;
+  padding-bottom: 10rem;
+
+  @include mix.respond(bigDesktop) {
+  }
+  @include mix.respond(desktop) {
+    padding: 0 2rem;
+    padding-bottom: 6rem;
+  }
+  @include mix.respond(bigTablets) {
+    padding: 0 2rem;
+    padding-bottom: 3rem;
+    padding-top: 1rem;
+  }
+
+  @include mix.respond(tablets) {
+    padding: 0 2rem;
+    padding-bottom: 3rem;
+    padding-top: 1rem;
+  }
+  @include mix.respond(phone) {
+    padding: 0 2rem;
+    padding-bottom: 3rem;
+    padding-top: 1rem;
+  }
+
+  @include mix.respond(smallPhone) {
+    padding: 0 2rem;
+    padding-bottom: 3rem;
+    padding-top: 1rem;
+  }
+
+  & h2 {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 3rem;
+    padding-top: 5rem;
+    margin-bottom: 5rem;
+    @include mix.respond(bigDesktop) {
+    }
+    @include mix.respond(desktop) {
+      padding-top: 0rem;
+    }
+    @include mix.respond(bigTablets) {
+      padding-top: 0rem;
+      margin-bottom: 2rem;
+    }
+    @include mix.respond(tablets) {
+      padding-top: 0rem;
+      margin-bottom: 2rem;
+    }
+    @include mix.respond(phone) {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      padding-top: 1rem;
+    }
+
+    @include mix.respond(smallPhone) {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      padding-top: 1rem;
+    }
+  }
+}
+.mySwiper {
+  padding: 2rem;
+  @include mix.respond(smallPhone) {
+    padding: 2rem 0;
+  }
+}
+.slide-content {
+  height: 18rem;
+  background-color: lightgray;
+  border-radius: 1rem;
+  line-height: 1.5;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  @media (max-width: 400px) {
+    gap: 0.5rem;
+    padding: 1rem;
+    line-height: 1.5;
+  }
+
+  @include mix.respond(bigTablets) {
+    gap: 0.5rem;
+    padding: 1rem;
+    line-height: 1.5;
+  }
+  @include mix.respond(bigDesktop) {
+    gap: 0.5rem;
+    padding: 1rem;
+    line-height: 1.5;
+  }
+
+  & p {
+    word-break: break-word;
+    text-align: justify;
+    hyphens: auto;
+  }
+}
+.profile {
+  height: 3.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  & .image {
+    height: 3.5rem;
+    width: 3.5rem;
+    background-color: var.$color-primery;
+    border-radius: 50%;
+  }
+}

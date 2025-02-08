@@ -1,0 +1,27 @@
+@use "../abstract/variables" as var;
+@use "../base/responsive" as mix;
+
+.sectionFive {
+  height: fit-content;
+  background-color: white;
+}
+.sticky-content {
+  height: 400vh;
+  width: 100%;
+  position: relative;
+
+  &-item {
+    height: 90vh;
+    width: 100%;
+    position: sticky;
+    top: 2rem;
+    background-color: var.$color-primery;
+    border-radius: 5rem;
+    margin-bottom: 2rem;
+
+    @include mix.respond(smallPhone) {
+      position: sticky;
+      top: 4rem;
+    }
+  }
+}
