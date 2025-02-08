@@ -48,6 +48,14 @@
       width: 15rem;
       right: -12rem;
     }
+    @include mix.respond(tablets) {
+      width: 30rem;
+      right: -13rem;
+    }
+    @include mix.respond(bigTablets) {
+      width: 35rem;
+      right: -13rem;
+    }
   }
 }
 
@@ -80,6 +88,14 @@
     @include mix.respond(smallPhone) {
       width: 15rem;
       left: -12rem;
+    }
+    @include mix.respond(tablets) {
+      width: 30rem;
+      left: -15rem;
+    }
+    @include mix.respond(bigTablets) {
+      width: 35rem;
+      left: -15rem;
     }
   }
 }

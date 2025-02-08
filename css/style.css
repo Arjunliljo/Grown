@@ -485,6 +485,18 @@ a {
     right: -12rem;
   }
 }
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+  .right-hand img {
+    width: 30rem;
+    right: -13rem;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199.98px) {
+  .right-hand img {
+    width: 35rem;
+    right: -13rem;
+  }
+}
 
 .left-hand {
   background-color: transparent;
@@ -518,6 +530,18 @@ a {
   .left-hand img {
     width: 15rem;
     left: -12rem;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+  .left-hand img {
+    width: 30rem;
+    left: -15rem;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199.98px) {
+  .left-hand img {
+    width: 35rem;
+    left: -15rem;
   }
 }
 
